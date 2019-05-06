@@ -13,7 +13,7 @@ import { colors } from "./colors";
 
 export default class PreConsultQuestions extends Component {
   constructor(props) {
-    
+
     super(props);
     console.disableYellowBox = true;
     this.state = {
@@ -31,7 +31,7 @@ export default class PreConsultQuestions extends Component {
       conernsDuration: [
         { day: "Less than one day", key: 1 },
         { day: "One day to one week", key: 2 },
-        { day: "One week to one month", key: 3 }, 
+        { day: "One week to one month", key: 3 },
         { day: "One month to one year", key: 4 },
         { day: "More than one year", key: 5 },
       ],
@@ -95,27 +95,41 @@ export default class PreConsultQuestions extends Component {
     } else if (this.state.listData[this.state.listData.length - 1].type === 'form') {
       return (
         <View>
-        { this.renderRelations() }
-      </View>
+          {this.renderRelations()}
+        </View>
       )
-    } else{
+    } else {
       return (
         <View style={styles.bottomViewNext}>
           <TouchableOpacity style={styles.bottomButtonContainer}>
-                  <Text style={styles.buttonText}>
-                    NEXT
+            <Text style={styles.buttonText}>
+              NEXT
                   </Text>
-                </TouchableOpacity>
+          </TouchableOpacity>
         </View>
-        
+
       )
     }
   }
 
+  renderRedMarker = (item) => {
+    if (item.isQuestion) {
+      return (
+        <View style={{ flexDirection: "row" }}>
+          <Image
+            resizeMode="stretch"
+            style={styles.redMarker}
+            source={require('./images/Rectangle_131.png')}
+          />
+        </View>
+      )
+    }
+    return null;
+  }
 
   Questions = () => {
     return (
-      <View>
+      <View style={{ marginTop: 10 }}>
         <FlatList
           showsVerticalScrollIndicator={false}
           ref={ref => this.flatList = ref}
@@ -126,13 +140,22 @@ export default class PreConsultQuestions extends Component {
             var chatStyle = styles.chatbox;
             var containerStyle = styles.chatContainer;
             if (!item.isQuestion) {
-              chatStyle = [chatStyle, { alignItems: "flex-end",borderRadius:8,height:60,textAlign: 'center' }];
-              containerStyle = [containerStyle, { alignItems: "flex-end", marginRight: 10 }];
+              chatStyle = [chatStyle, { alignItems: "flex-end", borderRadius: 8, height: 60, textAlign: 'center' }];
+              containerStyle = [containerStyle, { alignItems: "flex-end", justifyContent: "flex-end", marginRight: 10 }];
             }
-            
+
             return (
               <View style={containerStyle} key={index}>
-               
+                {item.isQuestion ? <Image
+                  resizeMode="stretch"
+                  style={styles.arrowRedMarker}
+                  source={require('./images/Path_366.png')}
+                /> : null}
+                {item.isQuestion ? <Image
+                  resizeMode="stretch"
+                  style={styles.redMarker}
+                  source={require('./images/Rectangle_131.png')}
+                /> : null}
                 <View style={chatStyle}>
                   <Text style={styles.chatText}>{item.question}</Text>
                 </View >

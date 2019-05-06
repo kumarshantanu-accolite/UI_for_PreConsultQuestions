@@ -345,6 +345,50 @@ VideoCallPaymentspaceingbottom:{
     width: 25
     },
 
+
+    manageConsentsTopView:{
+        flex: 1.6,
+        justifyContent: "center",
+    },
+    manageConsentsMiddleView:{
+        flex:1.0,
+    },
+    
+    manageConsentsBottomView:{
+        flex:7.4,
+    },
+    
+    manageConsentsTopText:{
+        fontSize: 30,
+        fontFamily: Platform.OS === "ios" ? "PruSansNormal-Demi" : "pruSansBold",
+        color: colors.nevada,
+        fontWeight: 'bold',
+        marginTop:20,
+        marginLeft:10   
+    },
+    
+    manageConsentsMiddleTextWrap:{
+        marginLeft:10,
+        marginRight:25
+    },
+    manageConsentsMiddleText:{
+        fontSize: 12,
+        fontFamily: Platform.OS === "ios" ? "PruSansNormal-Demi" : "pruSansBold",
+        color: colors.nevada,
+        marginLeft:10 
+    },
+    manageConsentsMiddleTextBold:{
+        fontSize: 12,
+        fontFamily: Platform.OS === "ios" ? "PruSansNormal-Demi" : "pruSansBold",
+        color: colors.nevada,
+        fontWeight: '600',
+        marginLeft:10  
+    },
+    
+    manageConsentsAcceptBox:{
+    
+    }
+    
 });
 
 export default styles;

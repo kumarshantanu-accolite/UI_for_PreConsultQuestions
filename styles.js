@@ -83,7 +83,21 @@ crossstyle: {
     height: 22,
     marginLeft: 10,
 },
-
+redMarkerContainer:{
+    flexDirection:'row',
+    overflow: 'hidden',
+    marginLeft:10,
+},
+redMarker: {
+    width: 5,
+    height: "100%",
+},
+arrowRedMarker:{
+    marginRight: -2,
+    marginLeft: 10,
+    marginTop:5,
+    width: 8,
+},
 chatContainer:{
     flexDirection: "row",
     marginTop: 5,
@@ -96,7 +110,7 @@ chatbox:{
     justifyContent: "center",
     backgroundColor:colors.whites,
     alignItems: "flex-start",
-    marginLeft:20,  
+    margin: 0
 },
 
 optionBox:{
@@ -120,6 +134,7 @@ chatInsertBox:{
     marginLeft:10,
     marginTop:7,
 },
+
 
 });
 
